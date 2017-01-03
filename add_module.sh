@@ -1,24 +1,12 @@
 #!/bin/bash
 #
 
-MODULE_NAME="$1"
+MODULE_NAME="$2"
 
+cd $1 || exit
 cd modules || exit
 mkdir $MODULE_NAME
 cd $MODULE_NAME || exit
-
-
-terraform-docs md . >> params.md
-
-cat << 'EOF' > README.md
-# Module
-![Overview](graphs/overview.png)
-
-## Parameters
-
-You can find them [here](params.md)
-
-EOF
 
 touch 'CHANGELOG.md'
 touch '.gitignore'
@@ -53,3 +41,17 @@ terraform get
 terraform graph > graphs/overview.dot
 dot -Tpng -o graphs/overview.png graphs/overview.dot
 echo "graph generated"
+
+terraform-docs md `pwd` >> `pwd`/params.md
+
+cat << 'EOF' > README.md
+# Module
+![Overview](graphs/overview.png)
+
+## Parameters
+
+You can find them [here](params.md)
+
+EOF
+
+echo "Done"
