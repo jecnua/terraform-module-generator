@@ -27,5 +27,3 @@ EOF
 
 touch 'README.md'
 echo "# $MODULE_DIR" >> 'README.md'
-git init
-git commit -m 'First commit'
