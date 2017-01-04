@@ -1,5 +1,9 @@
 #!/bin/bash
-# Example ./create_repo.sh aws elasticsearch
+# Source: https://github.com/jecnua/terraform-module-generator
+# Owner: jecnua <fabrizio.sabatini.it@gmail.com>
+# License: MIT
+# Usage:
+# ./create_repo.sh aws elasticsearch
 
 MODULE_DIR="tf-$1-$2"
 

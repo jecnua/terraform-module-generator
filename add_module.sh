@@ -1,5 +1,9 @@
 #!/bin/bash
-#
+# Source: https://github.com/jecnua/terraform-module-generator
+# Owner: jecnua <fabrizio.sabatini.it@gmail.com>
+# License: MIT
+# Usage:
+# ./add_module.sh elasticsearch
 
 MODULE_NAME="$2"
 
