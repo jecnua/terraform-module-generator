@@ -3,6 +3,8 @@
 # Owner: jecnua <fabrizio.sabatini.it@gmail.com>
 # License: MIT
 # Usage:
+# ./create_repo.sh <one> <two>
+# Example:
 # ./create_repo.sh aws elasticsearch
 
 MODULE_DIR="tf-$1-$2"
@@ -31,3 +33,5 @@ EOF
 
 touch 'README.md'
 echo "# $MODULE_DIR" >> 'README.md'
+
+echo "Repo created. Don't forget to git init and commit :)"

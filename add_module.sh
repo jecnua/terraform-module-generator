@@ -3,7 +3,9 @@
 # Owner: jecnua <fabrizio.sabatini.it@gmail.com>
 # License: MIT
 # Usage:
-# ./add_module.sh elasticsearch
+# ./add_module.sh <root_dir> <module name>
+# Example:
+# ./add_module.sh tf-aws-elasticsearch elasticsearch
 
 MODULE_NAME="$2"
 
@@ -33,9 +35,17 @@ EOF
 touch '00-variables_defaults.tf'
 
 cat << EOF > 00-variables_required_inputs.tf
-variable "access_key" {}
-variable "secret_key" {}
-variable "network_region" {}
+variable "access_key" {
+  description = "You AWS access key"
+}
+
+variable "secret_key" {
+  description = "You AWS secret token"
+}
+
+variable "network_region" {
+  description = "The AWS region you want to work on"
+}
 EOF
 
 touch '00-outputs.tf'
@@ -58,4 +68,4 @@ You can find them [here](params.md)
 
 EOF
 
-echo "Done"
+echo "Module added. Don't forget to git init and commit :)"
