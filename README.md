@@ -16,7 +16,7 @@ This repo contains script to:
 
     ./create_repo.sh <one> <two>
 
-Will create a repo called tf-<one>-<two>.
+Will create a repo called tf-one-two.
 So, for example:
 
     ./create_repo.sh aws elasticsearch
