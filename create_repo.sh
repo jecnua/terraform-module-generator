@@ -39,7 +39,7 @@ echo "# $MODULE_DIR
 ## Maintainers
 
 [Module maintainers](MAINTAINERS.md)
-" > 'README.md'
+" > README.md
 
 # Add Maintainers file
 echo '# Maintainers
@@ -49,5 +49,9 @@ echo '# Maintainers
 | Primary | X | X |
 | Secondary | Y | Y |
 ' > MAINTAINERS.md
+
+# Pull regenerate script
+wget https://raw.githubusercontent.com/jecnua/terraform-module-generator/master/regenerate.sh
+chmod 700 regenerate.sh
 
 echo "Repo created. Don't forget to git init and commit :)"
