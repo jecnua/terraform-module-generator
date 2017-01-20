@@ -25,12 +25,12 @@ Will create a module called tf-aws-elasticsearch.
 
 ### Add a module to a repo
 
-    ./add_repo.sh <base_dir> <name>
+    ./add_module.sh <base_dir> <name>
 
 Will add a module inside the modules directory of the <name> dir.
 So, for example:
 
-    ./add_repo.sh tf-aws-elasticsearch elasticsearch
+    ./add_module.sh tf-aws-elasticsearch elasticsearch
 
 Will add a dir called elasticsearch inside the tf-aws-elasticsearch dir.
 It will also generate the params.md file and the graph. All is linked from a
