@@ -31,7 +31,15 @@ terraform.tfvars
 .DS_Store
 EOF
 
-touch 'README.md'
-echo "# $MODULE_DIR" >> 'README.md'
+# Add README
+echo "# $MODULE_DIR" > 'README.md'
+
+# Add Maintainers file
+echo '# Maintainers
+| Role | Name | Email |
+|------|------|:-------------:|
+| Primary | X | X |
+| Secondary | Y | Y |
+' > MAINTAINERS.md
 
 echo "Repo created. Don't forget to git init and commit :)"
