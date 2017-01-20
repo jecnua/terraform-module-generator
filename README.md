@@ -1,6 +1,6 @@
 # Terraform module generator
 
-This repo contains script to:
+This repo contains scripts to:
 
 - Generate a new github module repo following terragrunt best practices
 - Add a new module in an existing repo
@@ -21,7 +21,7 @@ So, for example:
 
     ./create_repo.sh aws elasticsearch
 
-Will create a directory called tf-aws-elasticsearch.
+Will create a module called tf-aws-elasticsearch.
 
 ### Add a module to a repo
 
@@ -33,3 +33,5 @@ So, for example:
     ./add_repo.sh tf-aws-elasticsearch elasticsearch
 
 Will add a dir called elasticsearch inside the tf-aws-elasticsearch dir.
+It will also generate the params.md file and the graph. All is linked from a
+README.md created in the module directory.
