@@ -32,10 +32,16 @@ terraform.tfvars
 EOF
 
 # Add README
-echo "# $MODULE_DIR" > 'README.md'
+echo "# $MODULE_DIR
+
+## Maintainers
+
+[Module maintainers](MAINTAINERS.md)
+" > 'README.md'
 
 # Add Maintainers file
 echo '# Maintainers
+
 | Role | Name | Email |
 |------|------|:-------------:|
 | Primary | X | X |
