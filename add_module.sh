@@ -7,6 +7,13 @@
 # Example:
 # ./add_module.sh tf-aws-elasticsearch elasticsearch
 
+# Check dependencies
+if ! hash terraform-docs 2>/dev/null; then
+    echo "You don't have terraform-docs installed. Please check README."
+    echo "Exit"
+    exit 1
+fi
+
 MODULE_NAME="$2"
 
 cd $1 || exit
