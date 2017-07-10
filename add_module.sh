@@ -30,6 +30,10 @@ touch 'images/.gitignore'
 mkdir 'scripts'
 touch 'scripts/.gitignore'
 
+# Create some empty file to help conventions
+touch '00-variables_defaults.tf'
+touch '01-main.tf'
+
 cat << 'EOF' > 00-provider.tf
 provider "aws" {
   region     = "${var.network_region}"
@@ -37,8 +41,6 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 EOF
-
-touch '00-variables_defaults.tf'
 
 cat << EOF > 00-variables_required_inputs.tf
 variable "access_key" {
