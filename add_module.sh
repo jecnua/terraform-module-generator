@@ -57,7 +57,7 @@ variable "network_region" {
 }
 EOF
 
-touch '00-outputs.tf'
+touch '99-outputs.tf'
 
 rm -fr graphs/*
 terraform get
