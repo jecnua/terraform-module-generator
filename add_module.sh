@@ -15,7 +15,6 @@ mkdir $MODULE_NAME
 cd $MODULE_NAME || exit
 
 touch 'CHANGELOG.md'
-touch '.gitignore'
 
 mkdir 'graphs'
 touch 'graphs/.gitignore'
