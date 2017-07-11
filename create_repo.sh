@@ -36,9 +36,10 @@ echo "# $MODULE_DIR
 
 ![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.9.11-blue.svg?style=flat)
 
-## Maintainers
+## Quick links
 
-[Module maintainers](MAINTAINERS.md)
+- [Module maintainers](MAINTAINERS.md)
+
 " > README.md
 
 # Add Maintainers file
