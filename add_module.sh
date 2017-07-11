@@ -25,8 +25,8 @@ touch 'CHANGELOG.md'
 
 mkdir 'graphs'
 touch 'graphs/.gitignore'
-mkdir 'images'
-touch 'images/.gitignore'
+# mkdir 'images'
+# touch 'images/.gitignore'
 mkdir 'scripts'
 touch 'scripts/.gitignore'
 
