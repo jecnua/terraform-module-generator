@@ -16,7 +16,7 @@ do
   cd $a_directory || exit
   for b_directory in `ls -d */`
   do
-    TOTAL=`find . -name "*.tf" | xargs cat | grep '0 ? 0 : 1' | wc -l`
+    TOTAL=`find . -name "*.tf" | xargs cat | grep '== 0 ? 0 : 1' | wc -l`
     if [[ $TOTAL -ne 0 ]]
     then
       printf "$RED Failed! Found $TOTAL occurrence/s $NC \n"
