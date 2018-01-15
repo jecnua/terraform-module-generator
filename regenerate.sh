@@ -23,10 +23,11 @@ do
   # echo $a_directory
   dir_name=`echo $a_directory | sed 's:/*$::'`
   # echo $dir_name
-  terraform validate &> /dev/null
+  # terraform validate &> /dev/null
   RESULT=$?
   if [ $RESULT -eq 0 ]; then
     rm -fr graphs/*
+    terraform init
     terraform get
     terraform graph > graphs/overview.dot
     dot -Tpng -o graphs/overview.png graphs/overview.dot
