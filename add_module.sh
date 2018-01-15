@@ -25,8 +25,6 @@ touch 'CHANGELOG.md'
 
 mkdir 'graphs'
 touch 'graphs/.gitignore'
-# mkdir 'images'
-# touch 'images/.gitignore'
 mkdir 'scripts'
 touch 'scripts/.gitignore'
 
@@ -68,7 +66,7 @@ terraform graph > graphs/overview.dot
 dot -Tpng -o graphs/overview.png graphs/overview.dot
 echo "graph generated"
 
-terraform-docs md `pwd` >> `pwd`/params.md
+terraform-docs md "`pwd`" >> "`pwd`"/params.md
 
 cat << 'EOF' > README.md
 # Module
