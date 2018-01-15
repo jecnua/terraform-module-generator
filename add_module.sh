@@ -30,7 +30,13 @@ touch 'scripts/.gitignore'
 
 # Create some empty file to help conventions
 touch '00-variables_defaults.tf'
-touch '01-main.tf'
+touch '00-variables_required_inputs.tf'
+touch '01-ami.tf'
+touch '02-network.tf'
+touch '03-ec2.tf'
+touch '04-role.tf'
+touch '05-sns_and_notifications.tf'
+touch '99-outputs.tf'
 
 cat << 'EOF' > 00-provider.tf
 provider "aws" {
@@ -56,8 +62,6 @@ variable "network_region" {
   description = "The AWS region you want to work on"
 }
 EOF
-
-touch '99-outputs.tf'
 
 rm -fr graphs/*
 terraform init
