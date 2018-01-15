@@ -38,7 +38,7 @@ touch '04-role.tf'
 touch '05-sns_and_notifications.tf'
 touch '99-outputs.tf'
 
-cat << 'EOF' > 00-provider.tf
+cat << 'EOF' > 00-backends_and_providers.tf
 provider "aws" {
   region     = "${var.network_region}"
   access_key = "${var.access_key}"
