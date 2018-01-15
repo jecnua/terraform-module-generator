@@ -34,7 +34,7 @@ EOF
 # Add README
 echo "# $MODULE_DIR
 
-![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.9.11-blue.svg?style=flat)
+![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.11.2-blue.svg?style=flat)
 
 ## Quick links
 
