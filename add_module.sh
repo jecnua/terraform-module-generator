@@ -62,6 +62,7 @@ EOF
 touch '99-outputs.tf'
 
 rm -fr graphs/*
+terraform init
 terraform get
 terraform graph > graphs/overview.dot
 dot -Tpng -o graphs/overview.png graphs/overview.dot
