@@ -66,15 +66,16 @@ EOF
 rm -fr graphs/*
 terraform init
 terraform get
-terraform graph > graphs/overview.dot
-dot -Tpng -o graphs/overview.png graphs/overview.dot
-echo "graph generated"
+
+# Removed the graph since is a bad idea after all
+# terraform graph > graphs/overview.dot
+# dot -Tpng -o graphs/overview.png graphs/overview.dot
+# echo "graph generated"
 
 terraform-docs md "`pwd`" >> "`pwd`"/params.md
 
 cat << 'EOF' > README.md
 # Module
-![Overview](graphs/overview.png)
 
 ## Parameters
 

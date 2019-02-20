@@ -1,5 +1,7 @@
 # Terraform module generator
 
+ ![](https://img.shields.io/maintenance/yes/2019.svg)
+
 This repo contains scripts to:
 
 - Generate a new github module repo following terragrunt best practices
