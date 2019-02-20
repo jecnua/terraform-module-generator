@@ -13,10 +13,10 @@ for a_directory in `ls -d */`
 do
   (
   cd $a_directory || exit
-  if [ ! -d "graphs" ]; then
-    echo "Dir graphs not present. Creating..."
-    mkdir graphs
-  fi
+  # if [ ! -d "graphs" ]; then
+  #   echo "Dir graphs not present. Creating..."
+  #   mkdir graphs
+  # fi
   if [ ! -f "README.md" ]; then
     touch README.md
   fi
@@ -26,14 +26,14 @@ do
   # terraform validate &> /dev/null
   RESULT=$?
   if [ $RESULT -eq 0 ]; then
-    rm -fr graphs/*
+    # rm -fr graphs/*
     terraform init
     terraform get
-    terraform graph > graphs/overview.dot
-    dot -Tpng -o graphs/overview.png graphs/overview.dot
-    echo "$dir_name: graph regenerated"
+    # terraform graph > graphs/overview.dot
+    # dot -Tpng -o graphs/overview.png graphs/overview.dot
+    # echo "$dir_name: graph regenerated"
   else
-    printf "$RED $dir_name: terraform validate failed. Skipping graph generation. $NC \n"
+    printf "$RED $dir_name: terraform validate failed. $NC \n"
   fi
   terraform-docs md "`pwd`" > "`pwd`"/params.md
   echo "$dir_name: params regenerated"
