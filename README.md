@@ -56,3 +56,4 @@ Don't forget to add the license if it's a public repository. :)
 ## TODO
 
 - Add travis (shellcheck)
+- Add text in the CHANGELOG

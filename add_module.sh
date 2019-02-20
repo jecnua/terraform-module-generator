@@ -23,8 +23,8 @@ cd $MODULE_NAME || exit
 
 touch 'CHANGELOG.md'
 
-mkdir 'graphs'
-touch 'graphs/.gitignore'
+# mkdir 'graphs'
+# touch 'graphs/.gitignore'
 mkdir 'scripts'
 touch 'scripts/.gitignore'
 
