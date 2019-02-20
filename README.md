@@ -4,13 +4,17 @@
 
 This repo contains scripts to:
 
-- Generate a new github module repo following terragrunt best practices
-- Add a new module in an existing repo
+-   Generate a new github module repo following terragrunt best practices
+-   Add a new module in an existing repo
+
+## Maintainers
+
+-   [Module maintainers](MAINTAINERS.md)
 
 ## Requirements
 
-- terraform
-- [terraform-docs](https://github.com/segmentio/terraform-docs)
+-   terraform
+-   [terraform-docs](https://github.com/segmentio/terraform-docs)
 
 ## Usage
 
@@ -44,3 +48,7 @@ So, for example:
 Will add a dir called elasticsearch inside the tf-aws-elasticsearch dir.
 It will also generate the params.md file and the graph. All is linked from a
 README.md created in the module directory.
+
+## License
+
+Don't forget to add the license if it's a public repository. :)
