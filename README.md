@@ -52,3 +52,7 @@ README.md created in the module directory.
 ## License
 
 Don't forget to add the license if it's a public repository. :)
+
+## TODO
+
+- Add travis (shellcheck)
