@@ -4,6 +4,10 @@ language: bash
 
 before_install:
   - gem install travis
+  - mkdir -p ~/.travis
+  - touch ~/.travis/config.yml
+  - |
+    echo "checked_completion: true" >> ~/.travis/config.yml
 
 script:
   - shellcheck create_repo.sh # Validating BASH

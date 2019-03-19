@@ -7,6 +7,12 @@
 # Example:
 # ./create_repo.sh aws elasticsearch
 
+if [ "$#" -ne 2 ]; then
+    echo "You need to specify 2 parameters."
+    echo "Syntax create_repo.sh aws elasticsearch"
+    exit 1
+fi
+
 MODULE_DIR="tf-$1-$2"
 
 mkdir "$MODULE_DIR"
