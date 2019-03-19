@@ -14,6 +14,12 @@ if ! hash terraform-docs 2>/dev/null; then
     exit 1
 fi
 
+if [ "$#" -ne 2 ]; then
+    echo "You need to specify 2 parameters."
+    echo "Syntax add_module.sh <base_dir> <name>"
+    exit 1
+fi
+
 MODULE_NAME="$2"
 
 cd "$1" || exit
