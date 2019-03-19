@@ -16,10 +16,10 @@ fi
 
 MODULE_NAME="$2"
 
-cd $1 || exit
+cd "$1" || exit
 cd modules || exit
-mkdir $MODULE_NAME
-cd $MODULE_NAME || exit
+mkdir "$MODULE_NAME"
+cd "$MODULE_NAME" || exit
 
 touch 'CHANGELOG.md'
 
@@ -72,7 +72,7 @@ terraform get
 # dot -Tpng -o graphs/overview.png graphs/overview.dot
 # echo "graph generated"
 
-terraform-docs md "`pwd`" >> "`pwd`"/params.md
+terraform-docs md "$(pwd)" >> "$(pwd)"/params.md
 
 cat << 'EOF' > README.md
 # Module
