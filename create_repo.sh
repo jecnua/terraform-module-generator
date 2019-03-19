@@ -9,8 +9,8 @@
 
 MODULE_DIR="tf-$1-$2"
 
-mkdir $MODULE_DIR
-cd $MODULE_DIR || exit
+mkdir "$MODULE_DIR"
+cd "$MODULE_DIR" || exit
 mkdir 'examples'
 touch 'examples/.gitignore'
 mkdir 'modules'

@@ -9,7 +9,8 @@ before_install:
   - gem install travis
 
 script:
-  - shellcheck ./*.sh # Validating BASH
+  - shellcheck create_repo.sh # Validating BASH
+  - shellcheck add_module.sh # Validating BASH
   - travis lint # Linting travis file
 
 notifications:

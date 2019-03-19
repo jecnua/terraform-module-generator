@@ -12,7 +12,7 @@ cd modules || exit
 for a_directory in `ls -d */`
 do
   (
-  cd $a_directory || exit
+  cd "$a_directory" || exit
   # if [ ! -d "graphs" ]; then
   #   echo "Dir graphs not present. Creating..."
   #   mkdir graphs
@@ -21,11 +21,11 @@ do
     touch README.md
   fi
   # echo $a_directory
-  dir_name=`echo $a_directory | sed 's:/*$::'`
+  dir_name=$(echo "$a_directory "| sed 's:/*$::')
   # echo $dir_name
   # terraform validate &> /dev/null
   RESULT=$?
-  if [ $RESULT -eq 0 ]; then
+  if [ "$RESULT" -eq 0 ]; then
     # rm -fr graphs/*
     terraform init
     terraform get
@@ -35,7 +35,7 @@ do
   else
     printf "$RED $dir_name: terraform validate failed. $NC \n"
   fi
-  terraform-docs md "`pwd`" > "`pwd`"/params.md
+  terraform-docs md "$(pwd)" >> "$(pwd)"/params.md
   echo "$dir_name: params regenerated"
   )
 done
