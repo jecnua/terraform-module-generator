@@ -22,7 +22,20 @@ fi
 
 MODULE_NAME="$2"
 
+
 cd "$1" || exit
+
+cd examples
+
+cat << EOF > main.tf
+module "test" {
+  source = "../modules/$MODULE_NAME"
+  network_region = "eu-west-1"
+}
+EOF
+
+cd .. || exit
+
 cd modules || exit
 mkdir "$MODULE_NAME"
 cd "$MODULE_NAME" || exit
@@ -47,7 +60,6 @@ touch '99-outputs.tf'
 cat << 'EOF' > 00-backends_and_providers.tf
 provider "aws" {
   region     = var.network_region
-  version    = "~> 2.63"
 }
 EOF
 
