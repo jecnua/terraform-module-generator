@@ -7,13 +7,15 @@
 # Example:
 # ./create_repo.sh aws elasticsearch
 
+PREFIX="terraform"
+
 if [ "$#" -ne 2 ]; then
     echo "You need to specify 2 parameters."
     echo "Syntax create_repo.sh aws elasticsearch"
     exit 1
 fi
 
-MODULE_DIR="tf-$1-$2"
+MODULE_DIR="$PREFIX-$1-$2"
 
 mkdir "$MODULE_DIR"
 cd "$MODULE_DIR" || exit
@@ -27,6 +29,7 @@ touch '.gitignore'
 
 cat << EOF > .gitignore
 # Terraform files
+.idea
 .terraform
 terraform.tfstate
 terraform.tfvars

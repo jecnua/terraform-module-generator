@@ -1,7 +1,7 @@
 # Terraform module generator
 
 [![Build Status](https://travis-ci.org/jecnua/terraform-module-generator.svg?branch=master)](https://travis-ci.org/jecnua/terraform-module-generator)
-![](https://img.shields.io/maintenance/yes/2019.svg)
+![](https://img.shields.io/maintenance/yes/2020.svg)
 
 This repo contains scripts to:
 
@@ -30,12 +30,12 @@ you want to create the repo:
 
     terraform-module-generator/create_repo.sh <one> <two>
 
-Will create a repo called tf-one-two.
+Will create a repo called terraform-one-two.
 So, for example:
 
     terraform-module-generator/create_repo.sh aws elasticsearch
 
-Will create a module called tf-aws-elasticsearch.
+Will create a module called terraform-aws-elasticsearch.
 
 ### Add a module to a repo
 
@@ -44,9 +44,9 @@ Will create a module called tf-aws-elasticsearch.
 Will add a module inside the modules directory of the <name> dir.
 So, for example:
 
-    terraform-module-generator/add_module.sh tf-aws-elasticsearch elasticsearch
+    terraform-module-generator/add_module.sh terraform-aws-elasticsearch elasticsearch
 
-Will add a dir called elasticsearch inside the tf-aws-elasticsearch dir.
+Will add a dir called elasticsearch inside the terraform-aws-elasticsearch dir.
 It will also generate the params.md file and the graph. All is linked from a
 README.md created in the module directory.
 
