@@ -28,8 +28,16 @@ cd "$1" || exit
 cd examples || exit
 
 cat << EOF > main.tf
+provider "aws" {
+  version = "~> 2.63"
+  region  = "eu-west-1"
+}
+
 module "test" {
-  source = "../modules/$MODULE_NAME"
+  providers = {
+    aws = aws
+  }
+  source         = "../modules/$MODULE_NAME"
   network_region = "eu-west-1"
 }
 EOF
