@@ -67,7 +67,7 @@ touch '99-outputs.tf'
 
 cat << 'EOF' > 00-backends_and_providers.tf
 provider "aws" {
-  region     = var.network_region
+  region = var.network_region
 }
 EOF
 
