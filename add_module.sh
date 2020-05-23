@@ -46,25 +46,25 @@ touch '99-outputs.tf'
 
 cat << 'EOF' > 00-backends_and_providers.tf
 provider "aws" {
-  region     = "${var.network_region}"
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  region     = var.network_region
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 EOF
 
 cat << EOF > 00-variables_required_inputs.tf
 variable "access_key" {
-  type        = "string"
+  type        = string
   description = "Your AWS access key"
 }
 
 variable "secret_key" {
-  type        = "string"
+  type        = string
   description = "Your AWS secret token"
 }
 
 variable "network_region" {
-  type        = "string"
+  type        = string
   description = "The AWS region you want to work on"
 }
 EOF
