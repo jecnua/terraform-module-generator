@@ -43,8 +43,8 @@ EOF
 # Add README
 echo "# $MODULE_DIR
 
-![](https://img.shields.io/maintenance/yes/2019.svg)
-![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.11.11-blue.svg?style=flat)
+![](https://img.shields.io/maintenance/yes/2020.svg)
+![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.12.x-blue.svg?style=flat)
 
 ## Quick links
 
@@ -65,4 +65,6 @@ echo '# Maintainers
 wget https://raw.githubusercontent.com/jecnua/terraform-module-generator/master/regenerate.sh
 chmod 700 regenerate.sh
 
-echo "Repo created. Don't forget to git init and commit :)"
+echo "Repo created. Don't forget to:"
+echo "- add the maintainer"
+echo "- git init and commit :)"

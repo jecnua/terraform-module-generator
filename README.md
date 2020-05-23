@@ -56,5 +56,5 @@ Don't forget to add the license if it's a public repository. :)
 
 ## TODO
 
-- Add travis (shellcheck) for all files
+- Add circle-ci
 - Add text in the CHANGELOG

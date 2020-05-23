@@ -5,7 +5,7 @@
 # Usage:
 # ./add_module.sh <root_dir> <module name>
 # Example:
-# ./add_module.sh tf-aws-elasticsearch elasticsearch
+# ./add_module.sh terraform-aws-elasticsearch elasticsearch
 
 # Check dependencies
 if ! hash terraform-docs 2>/dev/null; then
