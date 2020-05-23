@@ -25,7 +25,7 @@ MODULE_NAME="$2"
 
 cd "$1" || exit
 
-cd examples
+cd examples || exit
 
 cat << EOF > main.tf
 module "test" {
