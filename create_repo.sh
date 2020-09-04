@@ -30,7 +30,7 @@ mkdir -pr '.github/workflows'
 touch 'tests.yaml'
 
 cat << EOF > .github/workflows/tests.yaml
-name: Tests
+name: tests
 # This workflow is triggered on pushes to the repository.
 on: [push]
 
