@@ -26,6 +26,58 @@ touch 'modules/.gitignore'
 mkdir 'test'
 touch 'test/.gitignore'
 touch '.gitignore'
+mkdir -pr '.github/workflows'
+touch 'tests.yaml'
+
+cat << EOF > .github/workflows/tests.yaml
+name: Tests
+# This workflow is triggered on pushes to the repository.
+on: [push]
+
+jobs:
+  default:
+    name: default
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: list
+        run: |
+          ls -la
+          pwd
+
+  shellcheck:
+    name: shellchecks
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      env:
+        placeholder: test
+    steps:
+        - uses: actions/checkout@v2
+        - name: Install deps
+          run: |
+            # Install deps
+            apt update
+            DEBIAN_FRONTEND=noninteractive apt install -y shellcheck
+        - name: Shellcheck
+          run: |
+            shellcheck *.sh # Validating BASH
+
+  # https://github.com/hashicorp/setup-terraform
+  tfcheckmodules:
+    name: terraform checks modules
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 0.12.29
+    - run: |
+        cd modules/xyz/
+        terraform init
+        terraform fmt -check
+EOF
+
 
 cat << EOF > .gitignore
 # Terraform files
@@ -43,8 +95,9 @@ EOF
 # Add README
 echo "# $MODULE_DIR
 
+[![Actions Status](https://github.com/xyz/xyz/workflows/tests/badge.svg)](https://github.com/xyz/xyz/actions)
 ![](https://img.shields.io/maintenance/yes/2020.svg)
-![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.12.x-blue.svg?style=flat)
+![https://www.terraform.io/](https://img.shields.io/badge/terraform-v0.13.x-blue.svg?style=flat)
 
 ## Quick links
 
@@ -67,4 +120,6 @@ chmod 700 regenerate.sh
 
 echo "Repo created. Don't forget to:"
 echo "- add the maintainer"
+echo "- change the path in the github actions label in the README"
+echo "- change the path in the github actions yaml"
 echo "- git init and commit :)"

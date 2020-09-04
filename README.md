@@ -1,6 +1,6 @@
 # Terraform module generator
 
-[![Build Status](https://travis-ci.org/jecnua/terraform-module-generator.svg?branch=master)](https://travis-ci.org/jecnua/terraform-module-generator)
+[![Actions Status](https://github.com/jecnua/terraform-module-generator/workflows/tests/badge.svg)](https://github.com/jecnua/terraform-module-generator/actions)
 ![](https://img.shields.io/maintenance/yes/2020.svg)
 
 This repo contains scripts to:
@@ -50,11 +50,12 @@ Will add a dir called elasticsearch inside the terraform-aws-elasticsearch dir.
 It will also generate the params.md file and the graph. All is linked from a
 README.md created in the module directory.
 
+Remember to change the directory the github actions will run test on
+
 ## License
 
 Don't forget to add the license if it's a public repository. :)
 
 ## TODO
 
-- Add circle-ci
 - Add text in the CHANGELOG
