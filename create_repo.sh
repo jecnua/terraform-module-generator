@@ -27,7 +27,6 @@ mkdir 'test'
 touch 'test/.gitignore'
 touch '.gitignore'
 mkdir -pr '.github/workflows'
-touch 'tests.yaml'
 
 cat << EOF > .github/workflows/tests.yaml
 name: tests

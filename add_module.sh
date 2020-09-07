@@ -29,7 +29,7 @@ cd examples || exit
 
 cat << EOF > main.tf
 provider "aws" {
-  version = "~> 2.63"
+  version = "~> 3.5"
   region  = "eu-west-1"
 }
 
